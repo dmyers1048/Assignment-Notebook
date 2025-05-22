@@ -18,16 +18,16 @@ struct AddWorkView: View {
     var body: some View {
         NavigationView {
             Form {
-                Picker("Course", selection: $course) {
+                Picker("Course:", selection: $course) {
                     ForEach(Self.courses, id: \.self) { course in
                         Text(course)
                     }
                 }
-                TextField("Description", text: $description)
-                DatePicker("Due Date", selection: $dueDate, displayedComponents: .date)
+                TextField("Description:", text: $description)
+                DatePicker("Due Date:", selection: $dueDate, displayedComponents: .date)
             }
-            .navigationBarTitle("Add New To-Do Item", displayMode: .inline)
-            .navigationBarItems(trailing: Button("Save") {
+            .navigationBarTitle("Add New Item", displayMode: .inline)
+            .navigationBarItems(trailing: Button("Add to list") {
                 if course.count > 0 && description.count > 0 {
                     let item = WorkItem(course: course, description: description, dueDate: dueDate)
                     workList.items.append(item)

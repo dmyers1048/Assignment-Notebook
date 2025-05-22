@@ -31,7 +31,7 @@ struct ContentView: View {
                     workList.items.remove(atOffsets: indexSet)
                 })
             }
-            .navigationBarTitle("Assignment Notebook", displayMode: .inline)
+            .navigationBarTitle("Assignment Notes", displayMode: .inline)
             .foregroundStyle(.blue)
             .navigationBarItems(
                 leading: EditButton(),
